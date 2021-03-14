@@ -23,3 +23,40 @@ def generateAvatar():
         avatar += x
 
     return avatar.capitalize()
+
+def generateElemento():
+    chance = random.randint(1, 100)
+
+    # Elemento
+
+    if chance >= 1 and chance <= 25:
+        elemento = "ar"
+    elif chance > 25 and chance <= 50:
+        elemento = "fogo"
+    elif chance > 50 and chance <= 75:
+        elemento = "terra"
+    else:
+        elemento = "água"
+
+
+    # Sub-Dobras
+
+    dobra_especial = ''
+
+    dobra = random.randint(1, 10)
+
+    sub_dobra_terra = random.randint(1, 10)
+
+    if elemento == 'água' and dobra == 1:
+        dobra_especial = 'sangue'
+    elif elemento == 'fogo' and dobra == 1:
+        dobra_especial = 'raio'
+    elif elemento == 'terra':
+        if sub_dobra_terra >= 1 and sub_dobra_terra < 5:
+            dobra_especial = 'lava'
+        elif sub_dobra_terra > 5 and sub_dobra_terra <= 10:
+            dobra_especial = 'metal'
+        elif sub_dobra_terra == 5:
+            dobra_especial = 'metal e lava'
+
+    return elemento, dobra_especial;
