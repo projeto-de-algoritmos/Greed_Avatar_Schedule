@@ -1,5 +1,5 @@
-from greed import generateAvatar
-from greed import generateElemento
+from avatar import generateAvatar
+from avatar import generateElemento
 
 avatar = generateAvatar()
 elemento, dobra_especial = generateElemento()
