@@ -13,6 +13,9 @@ def minDelay(ListaDeTarefas: list):
 
     for j in ListaDeTarefas:
         tarefasFeitas.append(j)
+        # Assing job j to interval [t, t + tj]
+        # tarefasFeitas[j] = [t, t + tempo de duracao]
+        # Atribuir tempo de duracao das tarefas
         s[j] = t
         f[j] = t + tj
         t = t + tj
