@@ -38,7 +38,24 @@ class minLat:
         print([s[j], f[j]])
 
 
+def minimumLateness(d, duracao, n):
+    d.sort()
+    t = 0
+    s = []
+    f = []
 
+    for j in range(n):
+        s.append(t)
+        tempoDuracao = t + duracao[j]
+        f.append(tempoDuracao)
+        t = t + duracao[j]
+        print(s[j], f[j])
+
+deadLine = [6, 8, 9, 9, 14, 15]
+duracao = [3, 2, 1, 4, 3, 2]
+
+
+minimumLateness(deadLine, duracao, len(deadLine))
 
 
 
