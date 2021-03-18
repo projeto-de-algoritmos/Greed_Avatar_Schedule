@@ -6,6 +6,7 @@ import time
 avatar = generateAvatar()
 elemento, dobra_especial = generateElemento()
 
+
 print(f'Água, Terra, Fogo e Ar somente o Avatar é capaz de dominar os quatro elementos e manter o equilíbrio do mundo')
 time.sleep(2)
 main()
