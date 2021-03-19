@@ -5,22 +5,7 @@ from utils import grafo as GF
 class minLat:
     def __init__(self) -> None:
         self.graph = GF.Grafo(False)
-
-        self.graph.addElo(GF.Node("Tribo da Agua"), Node("Tribo do Fogo"), 1)
-        self.graph.addElo(GF.Node("Tribo da Agua"), Node("Tribo do Ar"), 2)
-        self.graph.addElo(GF.Node("Tribo da Agua"), GF.Node("Tribo da Terra"), 1)
-        
-        self.graph.addElo(GF.Node("Tribo da Terra"), GF.Node("Tribo do Fogo"), 2)
-        self.graph.addElo(GF.Node("Tribo da Terra"), GF.Node("Tribo do Ar"), 1)
-        self.graph.addElo(GF.Node("Tribo da Terra"), GF.Node("Tribo da Agua"), 1)
-
-        self.graph.addElo(GF.Node("Tribo do Ar"), GF.Node("Tribo do Fogo"), 1)
-        self.graph.addElo(GF.Node("Tribo do Ar"), GF.Node("Tribo da Terra"), 1)
-        self.graph.addElo(GF.Node("Tribo do Ar"), GF.Node("Tribo da Agua"), 2)
-
-        self.graph.addElo(GF.Node("Tribo do Fogo"), GF.Node("Tribo do Ar"), 1)
-        self.graph.addElo(GF.Node("Tribo do Fogo"), GF.Node("Tribo da Terra"), 2)
-        self.graph.addElo(GF.Node("Tribo do Fogo"), GF.Node("Tribo da Agua"), 1)
+        self.graph.createPoints()
 
     def minDelay(self, ListaDeTarefas: list):
 
@@ -28,14 +13,25 @@ class minLat:
 
         currnTime = 0
         tastksDone = []
+        travelTime = []
         overTime = []
 
         for index, task in enumerate(ListaDeTarefas):
             tastksDone.append(task)
+
+            if index == 0:
+                print(f"{trabalho.localizacoes.get(6)} -> {task.localizacao}")
+                travelTime.append(self.graph.getWeight(trabalho.localizacoes.get(6), task.localizacao))
+            elif index < len(ListaDeTarefas):
+                print(f"{ListaDeTarefas[index - 1].localizacao} -> {task.localizacao} = {self.graph.getWeight(ListaDeTarefas[index - 1].localizacao, task.localizacao)}")
+                travelTime.append(self.graph.getWeight(ListaDeTarefas[index - 1].localizacao, task.localizacao))
+
+
+            currnTime += task.duracao + travelTime[index]
+
             overTime.append(currnTime - task.deadLine)
-            currnTime += task.duracao + self.graph.getWeight(task.localizacao, next(ListaDeTarefas).localizacao)
-        
-        return currnTime, tastksDone, overTime
+            
+        return currnTime, tastksDone, overTime, travelTime
 
 
 # def minimumLateness(d, duracao, n):
