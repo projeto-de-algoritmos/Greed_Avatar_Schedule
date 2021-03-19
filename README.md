@@ -1,7 +1,7 @@
 # Avatar_Schedule
 
 **Número da Lista**: 1<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+**Conteúdo da Disciplina**: Algoritmos Ambiciosos (Greed)<br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -10,22 +10,36 @@
 | 17/0113060  |  Pedro Vítor de Salles Cella|
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+O projeto tem como objetivo utilizar do algoritmo de atraso mínimo para organizar uma rotina sendo ela criada pelo usuário ou utilizando a rotina criada no próprio código, sendo usando no contexto da animação Avatar, no programa foi utilizado grafos para estabelecer uma relação de deslocamento, ou seja, com o auxílio de grafos temos o tempo de deslocamento entre uma cidade e outra para ser considerado no cálculo de resolução dos problemas.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
 **Linguagem**: Python<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 
+<p>Para usar nosso projeto primeiro deve-se ter instalado o Python3 e uma biblioteca do Python chamada prettytable, siga as etapas:</p>
+ 
+<p>Caso não tenha o Python3 instalado:</p>
+ 
+```
+sudo apt-get install python3
+```
+ 
+<p>Para instalar a biblioteca é bem simples, basta baixar pelo Linux ou baixar usando o pip</p>
+ 
+Linux<br>
+```
+sudo apt-get install -y python3-prettytable
+```
+ 
+Pip<br>
+```
+python -m pip install -U prettytable
+```
+Ou
+```
+pip3 install prettytable
+```
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
-
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
-
-
