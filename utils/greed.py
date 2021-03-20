@@ -1,3 +1,4 @@
+from time import time_ns
 from utils import trabalho
 from utils import grafo as GF
 
@@ -12,6 +13,7 @@ class minLat:
         ListaDeTarefas.sort(key=lambda x: x.deadLine)
 
         currnTime = 0
+        times = []
         tastksDone = []
         travelTime = []
         overTime = []
@@ -20,18 +22,19 @@ class minLat:
             tastksDone.append(task)
 
             if index == 0:
-                print(f"{trabalho.localizacoes.get(6)} -> {task.localizacao}")
+                # print(f"{trabalho.localizacoes.get(6)} -> {task.localizacao}")
                 travelTime.append(self.graph.getWeight(trabalho.localizacoes.get(6), task.localizacao))
             elif index < len(ListaDeTarefas):
-                print(f"{ListaDeTarefas[index - 1].localizacao} -> {task.localizacao} = {self.graph.getWeight(ListaDeTarefas[index - 1].localizacao, task.localizacao)}")
+                # print(f"{ListaDeTarefas[index - 1].localizacao} -> {task.localizacao} = {self.graph.getWeight(ListaDeTarefas[index - 1].localizacao, task.localizacao)}")
                 travelTime.append(self.graph.getWeight(ListaDeTarefas[index - 1].localizacao, task.localizacao))
 
-
+            times.append(currnTime + travelTime[index])
             currnTime += task.duracao + travelTime[index]
+            
 
             overTime.append(currnTime - task.deadLine)
             
-        return currnTime, tastksDone, overTime, travelTime
+        return times, tastksDone, overTime, travelTime
 
 
 # def minimumLateness(d, duracao, n):

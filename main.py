@@ -1,3 +1,4 @@
+import prettytable
 from utils import avatar as AV
 from utils import image as IMG
 from utils import trabalho as TSK
@@ -8,6 +9,7 @@ import time
 
 avatar = AV.generateAvatar()
 elemento, dobra_especial = AV.generateElemento()
+
 tabela = PrettyTable()
 tabela.field_names = ["Nome do problema", "Duração problema", "Dead line do problema", "Localização"]
 
@@ -50,7 +52,7 @@ else:
     tabalhosList.append(TSK.trabalho('Abrir portal para o mundo espiritual no Reino da Terra', 2, 4, 2))
     tabalhosList.append(TSK.trabalho('Abrir portal para o mundo espiritual na Nação do Fogo', 2, 1, 3))
     tabalhosList.append(TSK.trabalho('Abrir portal para o mundo espiritual no Templo do Ar do Sul', 2, 8, 5))
-    tabalhosList.append(TSK.trabalho('Voltar a Cidade República', 2, 10, 6))
+    tabalhosList.append(TSK.trabalho('Voltar a Cidade República', 2, 18, 6))
 
     for j in tabalhosList:
         tabela.add_row([j.nome, j.duracao, j.deadLine, j.localizacao])
@@ -58,17 +60,19 @@ else:
 
 print(tabela)
 
+
+finalTable = PrettyTable()
+finalTable.field_names = ["Localização anterior", "Localização do problema", "Tempo de Viagem", "Problema","Feito em", "Duração problema", "Dead line do problema", "Over Time"]
+
+
 minL = GD.minLat()
 
-currnTime, tastksDone, overTime, travalTime = minL.minDelay(tabalhosList)
+times, tastksDone, overTime, travelTime = minL.minDelay(tabalhosList)
 
-print(currnTime)
+for index, t in enumerate(tastksDone):
+    if index == 0:
+        finalTable.add_row([TSK.localizacoes.get(6), t.localizacao, travelTime[index], t.nome, times[index], t.duracao, t.deadLine, overTime[index]])
+    else:
+        finalTable.add_row([tastksDone[index - 1].localizacao, t.localizacao, travelTime[index], t.nome, times[index], t.duracao, t.deadLine, overTime[index]])
 
-for j in tastksDone:
-    print(j.nome, end=", ")
-print("")
-print(travalTime)
-print(overTime)
-
-
-
+print(finalTable)
