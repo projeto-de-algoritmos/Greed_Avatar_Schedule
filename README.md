@@ -50,4 +50,5 @@ Ou
 pip3 install prettytable
 ```
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Apenas rode o comando:
+`python3 main.py`
