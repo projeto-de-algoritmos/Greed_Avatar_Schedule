@@ -65,7 +65,7 @@ print(tabela)
 
 print("\n")
 finalTable = PrettyTable()
-finalTable.field_names = ["Localização anterior", "Localização do problema", "Tempo de Viagem", "Problema","Feito em", "Duração problema", "Dead line do problema", "Over Time"]
+finalTable.field_names = ["Localização anterior", "Localização do problema", "Tempo de Viagem", "Problema","Começo da tarefa", "Duração problema", "Dead line do problema", "Over Time"]
 
 
 minL = GD.minLat() # Novo greed
