@@ -13,7 +13,11 @@
 O projeto tem como objetivo utilizar do algoritmo de atraso mínimo para organizar uma rotina sendo ela criada pelo usuário ou utilizando a rotina criada no próprio código, sendo usando no contexto da animação Avatar, no programa foi utilizado grafos para estabelecer uma relação de deslocamento, ou seja, com o auxílio de grafos temos o tempo de deslocamento entre uma cidade e outra para ser considerado no cálculo de resolução dos problemas.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+![Screenshot1](images/imagem1.png)
+
+![Screenshot3](images/imagem3.png)
+
 
 ## Instalação 
 **Linguagem**: Python<br>
