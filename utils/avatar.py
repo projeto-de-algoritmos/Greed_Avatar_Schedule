@@ -6,7 +6,7 @@ class elemento:
 			self.nome = nome_elemento
 			self.subDobras = []
 
-	def add_sub_dobra(self, nome_sub_dobra:str, chance_de_acontecer:float): #TODO: Mudar para porcentagem.
+	def add_sub_dobra(self, nome_sub_dobra:str, chance_de_acontecer:float):
 		self.subDobras += [nome_sub_dobra] * chance_de_acontecer
 
 	def getSubDobra(self, escolha:int):
@@ -14,7 +14,6 @@ class elemento:
 			return ""
 		else:
 			return self.subDobras[escolha - 1]
-
 
 
 def generateAvatar():

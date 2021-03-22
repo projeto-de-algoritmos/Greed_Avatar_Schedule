@@ -54,6 +54,8 @@ class Grafo:
 					return
 			self.Elos.append(Elo(currentNode, nextNode, weight))
 
+
+	# Criando as distancias de de cada localizção para cada diferente localização
 	def createPoints(self):
 			# Tribo da Agua do Sul
 			self.addElo(Node(trabalho.localizacoes.get(0)), Node(trabalho.localizacoes.get(0)), 0)# Tribo da Agua do Sul
