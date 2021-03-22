@@ -16,7 +16,11 @@ O projeto tem como objetivo utilizar do algoritmo de atraso mínimo para organiz
 
 ![Screenshot1](images/imagem1.png)
 
+![Screenshot2](images/imagem2.png)
+
 ![Screenshot3](images/imagem3.png)
+
+![Screenshot4](images/imagem4.png)
 
 
 ## Instalação 
